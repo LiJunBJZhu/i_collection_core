@@ -1,0 +1,347 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installation &mdash; Ansible Collection  documentation</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="contents.html" class="icon icon-home"> Ansible Collection
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_at.html">ibmi_at – Schedule a batch job on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_copy.html">ibmi_copy – Copy a save file from local to a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_device_vary.html">ibmi_device_vary – vary on or off target device on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_display_subsystem.html">ibmi_display_subsystem – display all currently active subsystems or currently active jobs in a subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_end_subsystem.html">ibmi_end_subsystem – end a subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_fetch.html">ibmi_fetch – Fetch objects or a library from a remote IBMi node and store on local</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_fix.html">ibmi_fix – Install, remove or query an individual fix or a set of fixes on to IBM i system.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_fix_imgclg.html">ibmi_fix_imgclg – Install fixes such as PTF, PTF Group, Technology refresh to the target IBM i system by image catalog.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_host_server_service.html">ibmi_host_server_service – Manage host server on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_iasp.html">ibmi_iasp – Control IASP on target IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_job.html">ibmi_job – Returns job information according to inputs.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_lib_restore.html">ibmi_lib_restore – Restore one library on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_lib_save.html">ibmi_lib_save – Save one libary on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_message.html">ibmi_message – Search or reply message on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_object_authority.html">ibmi_object_authority – Grant, Revoke or Display Object Authority</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_object_find.html">ibmi_object_find – Find specific IBM i object(s).</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_object_restore.html">ibmi_object_restore – Restore one or more objects on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_object_save.html">ibmi_object_save – Save one or more objects on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_reboot.html">ibmi_reboot – Reboot a machine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_save_product_to_savf.html">ibmi_save_product_to_savf – Save the the licensed program(product) to a save file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_script.html">ibmi_script – Execute a local cl/sql script file on a remote ibm i node.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_script_execute.html">ibmi_script_execute – Execute a cl/sql script file on a remote ibm i node.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_sql_execute.html">ibmi_sql_execute – Executes a SQL non-DQL(Data Query Language) statement on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_sql_query.html">ibmi_sql_query – Executes a SQL DQL(Data Query Language) statement on a remote IBMi node.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_start_subsystem.html">ibmi_start_subsystem – start a subsystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_submit_job.html">ibmi_submit_job – Submit a job on IBM i system. This module functions like SBMJOB.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_sync.html">ibmi_sync – Synchronize a save file from current ibm i node A to another ibm i node B.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_synchronize.html">ibmi_synchronize – Synchronize a save file from ibm i node A to another ibm i node B.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_tcp_interface.html">ibmi_tcp_interface – Add, change, remove or query a tcp/ip interface.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_tcp_server_service.html">ibmi_tcp_server_service – Manage tcp server on a remote IBMi node</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_uninstall_product.html">ibmi_uninstall_product – delete the objects that make up the licensed program(product)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="modules/ibmi_user_and_group.html">ibmi_user_and_group – Create, Change or Display a user(or group) profile</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="contents.html">Ansible Collection</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="contents.html">Docs</a> &raquo;</li>
+        
+      <li>Installation</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/LiJunBJZhu/i_collection_core/blob/master/docs/source/installation.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>There are three options for installing the IBM Blockchain Platform collection for Ansible:</p>
+<ul>
+<li><p class="first">Installing using Ansible Galaxy</p>
+<p>Ansible Galaxy is the package manager for Ansible. The collection is published to Ansible Galaxy on a regular basis: <a class="reference external" href="https://galaxy.ansible.com/ibm/blockchain_platform">https://galaxy.ansible.com/ibm/blockchain_platform</a></p>
+<p>In order to install using Ansible Galaxy, you must:</p>
+<ol class="arabic simple">
+<li>Install all of the software listed in <a class="reference internal" href="#requirements"><span class="std std-ref">Requirements</span></a>.</li>
+<li>Follow the instructions for <a class="reference internal" href="#installing-using-ansible-galaxy"><span class="std std-ref">Installing using Ansible Galaxy</span></a>.</li>
+</ol>
+</li>
+<li><p class="first">Installing from source</p>
+<p>You may wish to install the collection from source if you cannot access Ansible Galaxy due to firewall or proxy issues, or if you need to install a version of the collection that has not yet been published.</p>
+<p>In order to install from source, you must:</p>
+<ol class="arabic simple">
+<li>Install all of the software listed in <a class="reference internal" href="#requirements"><span class="std std-ref">Requirements</span></a>.</li>
+<li>Follow the instructions for <a class="reference internal" href="#installing-from-source"><span class="std std-ref">Installing from source</span></a>.</li>
+</ol>
+</li>
+<li><p class="first">Using a Docker image</p>
+<p>If you do not want to, or can not, install all of the required software for this collection on your system, you may wish to build a Docker image that contains all of the software required to run Ansible playbooks which use this collection.</p>
+<p>In order to build a Docker image, you must:</p>
+<ol class="arabic simple">
+<li>Follow the instructions for <a class="reference internal" href="#using-a-docker-image"><span class="std std-ref">Using a Docker image</span></a>.</li>
+</ol>
+</li>
+</ul>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>In order to use this Ansible collection, you must have the following pre-requisite software installed and available:</p>
+<p><strong>Python v3.7+</strong></p>
+<blockquote>
+<div><p>Python can be installed from a variety of sources, including the package manager for your operating system (apt, yum, etc).
+If you install Python from the package manager for your operating system, you must also install the development libraries (usually a package named <code class="docutils literal notranslate"><span class="pre">python3-devel</span></code>), as these are required when installing modules through <code class="docutils literal notranslate"><span class="pre">pip</span></code>.</p>
+<ul class="simple">
+<li>The official Python website: <a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a></li>
+<li>The unofficial Python version manager: <a class="reference external" href="https://github.com/pyenv/pyenv">https://github.com/pyenv/pyenv</a></li>
+</ul>
+</div></blockquote>
+<p><strong>Ansible v2.8+</strong></p>
+<blockquote>
+<div><p>Python can be installed from a variety of sources, including the package manager for your operating system (apt, yum, etc). You can also install it using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, the package manager for Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">ansible</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Hyperledger Fabric v1.4.x binaries</strong></p>
+<blockquote>
+<div><p>This Ansible collection uses the Hyperledger Fabric v1.4 binaries to interact with the peers and ordering services in your Hyperledger Fabric networks. These binaries include <code class="docutils literal notranslate"><span class="pre">configtxgen</span></code>, <code class="docutils literal notranslate"><span class="pre">peer</span></code>, and <code class="docutils literal notranslate"><span class="pre">fabric-ca-client</span></code>.</p>
+<p>You can install these binaries by following the Hyperledger Fabric documentation: <a class="reference external" href="https://hyperledger-fabric.readthedocs.io/en/release-1.4/install.html">https://hyperledger-fabric.readthedocs.io/en/release-1.4/install.html</a></p>
+<p>These binaries must be on the <code class="docutils literal notranslate"><span class="pre">PATH</span></code> of the system that will be used to run your Ansible Playbooks. You can check that the binaries are installed correctly by running:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">peer</span> <span class="n">version</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>Hyperledger Fabric SDK for Python v0.8.1+</strong></p>
+<blockquote>
+<div><p>This Ansible collection uses the Hyperledger Fabric SDK for Python to interact with the certificate authorities in your Hyperledger Fabric networks.</p>
+<p>You can install this SDK using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, the package manager for Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">fabric</span><span class="o">-</span><span class="n">sdk</span><span class="o">-</span><span class="n">py</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>OpenShift client for Python v0.10.3+</strong></p>
+<blockquote>
+<div><p>This Ansible collection uses the OpenShift client for Python to interact with your Red Hat OpenShift or Kubernetes cluster when installing the IBM Blockchain Platform software.</p>
+<p>You can install this SDK using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, the package manager for Python:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">openshift</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p><strong>IBM Blockchain Platform v2.1.3+</strong></p>
+<blockquote>
+<div><p>This Ansible collection requires use of IBM Blockchain Platform v2.1.3 or later. Previous versions of the IBM Blockchain Platform cannot be used with this Ansible collection. You can use the IBM Blockchain Platform on IBM Cloud, or the IBM Blockchain Platform software running in a Red Hat OpenShift or Kubernetes cluster.</p>
+<p>You can not use this Ansible collection to create an instance of the IBM Blockchain Platform service on IBM Cloud. If you want to use the IBM Blockchain Platform on IBM Cloud, you must create the instance before you attempt to use this Ansible collection: <a class="reference external" href="https://cloud.ibm.com/catalog/services/blockchain-platform#about">https://cloud.ibm.com/catalog/services/blockchain-platform#about</a></p>
+<p>You can use this Ansible collection to install the IBM Blockchain Platform software into a Red Hat Openshift or Kubernetes cluster, if you have not already installed it. To see how to do this, follow this tutorial: <a class="reference external" href="./tutorials/installing.html">Installing the IBM Blockchain Platform</a></p>
+<p>If you are using the IBM Blockchain Platform on IBM Cloud, you must create service credentials for this Ansible collection to use. The <code class="docutils literal notranslate"><span class="pre">api_endpoint</span></code> and <code class="docutils literal notranslate"><span class="pre">api_key</span></code> properties in the service credentials must be passed into the modules and roles in this Ansible collection.</p>
+<p>If you are using the IBM Blockchain Platform software running in a Red Hat OpenShift or Kubernetes cluster, you must determine the URL of your IBM Blockchain Platform console - this will be the <code class="docutils literal notranslate"><span class="pre">api_endpoint</span></code> property. You must also provide a valid API key <code class="docutils literal notranslate"><span class="pre">api_key</span></code> and secret <code class="docutils literal notranslate"><span class="pre">api_secret</span></code> for the IBM Blockchain Platform console. These properties must be passed into the modules and roles in this Ansible collection.</p>
+</div></blockquote>
+</div>
+<div class="section" id="installing-using-ansible-galaxy">
+<h2>Installing using Ansible Galaxy<a class="headerlink" href="#installing-using-ansible-galaxy" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">ansible-galaxy</span></code> command to install a collection from Ansible Galaxy, the package manager for Ansible:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">galaxy</span> <span class="n">collection</span> <span class="n">install</span> <span class="n">ibm</span><span class="o">.</span><span class="n">blockchain_platform</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="installing-from-source">
+<h2>Installing from source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <code class="docutils literal notranslate"><span class="pre">ansible-galaxy</span></code> command to install a collection built from source. To build your own collection, follow these steps:</p>
+<ol class="arabic simple">
+<li>Clone the repository:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">IBM</span><span class="o">-</span><span class="n">Blockchain</span><span class="o">/</span><span class="n">ansible</span><span class="o">-</span><span class="n">collection</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li>Build the collection artifact:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">ansible</span><span class="o">-</span><span class="n">collection</span>
+<span class="n">ansible</span><span class="o">-</span><span class="n">galaxy</span> <span class="n">collection</span> <span class="n">build</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li>Install the collection, replacing <code class="docutils literal notranslate"><span class="pre">x.y.z</span></code> with the current version:</li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ansible</span><span class="o">-</span><span class="n">galaxy</span> <span class="n">collection</span> <span class="n">install</span> <span class="n">ibm</span><span class="o">-</span><span class="n">blockchain_platform</span><span class="o">-</span><span class="n">x</span><span class="o">.</span><span class="n">y</span><span class="o">.</span><span class="n">z</span><span class="o">.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-a-docker-image">
+<h2>Using a Docker image<a class="headerlink" href="#using-a-docker-image" title="Permalink to this headline">¶</a></h2>
+<p>As an alternative to installing all of the requirements on your system, you can build a Docker image that contains all of the requirements.
+You can then use that Docker image to run your playbooks.</p>
+<p>An example Dockerfile can be found here: <a class="reference external" href="https://github.com/IBM-Blockchain/ansible-collection/blob/master/docker/Dockerfile">https://github.com/IBM-Blockchain/ansible-collection/blob/master/docker/Dockerfile</a></p>
+<p>The Dockerfile makes use of the Docker multi-stage build feature to reduce the size of the image built by 50%.</p>
+<p>Assuming you have built the Docker image and tagged it as <code class="docutils literal notranslate"><span class="pre">mydockerorg/ansible</span></code>, you can run a playbook by volume mounting it into the container:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="n">path</span><span class="o">/</span><span class="n">to</span><span class="o">/</span><span class="n">playbooks</span><span class="p">:</span><span class="o">/</span><span class="n">playbooks</span> <span class="n">mydockerorg</span><span class="o">/</span><span class="n">ansible</span> <span class="n">ansible</span><span class="o">-</span><span class="n">playbook</span> <span class="o">/</span><span class="n">playbooks</span><span class="o">/</span><span class="n">playbook</span><span class="o">.</span><span class="n">yml</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Simon Stone
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
