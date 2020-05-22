@@ -64,7 +64,7 @@ You can use the ``ansible-galaxy`` command to install a collection built from so
 
 ::
 
-    git clone https://github.com/IBM-Blockchain/ansible-collection.git
+    git clone https://github.com/LiJunBJZhu/i_collection_core.git
 
 2. Build the collection artifact:
 
