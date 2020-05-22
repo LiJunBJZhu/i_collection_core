@@ -27,20 +27,9 @@ This Ansible collection is maintained by the IBM Blockchain Platform development
    installation
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Tutorials
-   :hidden:
-
-   tutorials/installing
-   tutorials/building
-   tutorials/joining
-   tutorials/deploying
-
-.. toctree::
    :maxdepth: 3
    :caption: Reference
    :hidden:
 
    modules
-   roles
 
