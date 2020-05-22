@@ -56,4 +56,7 @@ html_context = {
     "conf_py_path": "/docs/source/",
 }
 
+# The master toctree document.
+master_doc = 'index'
+
 html_favicon = 'favicon.ico'
