@@ -1,231 +1,148 @@
-.. ...........................................................................
-.. © Copyright IBM Corporation 2020                                          .
-.. ...........................................................................
+..
+.. SPDX-License-Identifier: Apache-2.0
+..
 
 Installation
 ============
 
-You can install the **IBM z/OS core collection** using one of these options:
-Ansible Galaxy, Ansible Automation Hub, or a local build.
+There are three options for installing the IBM Blockchain Platform collection for Ansible:
 
-For more information on installing collections, see `using collections`_.
+* Installing using Ansible Galaxy
 
-.. _using collections:
-   https://docs.ansible.com/ansible/latest/user_guide/collections_using.html
+  Ansible Galaxy is the package manager for Ansible. The collection is published to Ansible Galaxy on a regular basis: https://galaxy.ansible.com/ibm/blockchain_platform
 
-Ansible Galaxy
---------------
-Galaxy enables you to quickly configure your automation project with content
-from the Ansible community.
+  In order to install using Ansible Galaxy, you must:
 
-Galaxy provides prepackaged units of work known as collections. You can use the
-`ansible-galaxy`_ command with the option ``install`` to install a collection on
-your system (control node) hosted in Galaxy.
+  1. Install all of the software listed in :ref:`Requirements`.
+  2. Follow the instructions for :ref:`Installing using Ansible Galaxy`.
 
-By default, the `ansible-galaxy`_ command installs the latest available
-collection, but you can add a version identifier to install a specific version.
-Before installing a collection from Galaxy, review all the available versions.
-Periodically, new releases containing enhancements and features you might be
-interested in become available.
+* Installing from source
 
-The ansible-galaxy command ignores any pre-release versions unless
-the ``==`` range identifier is set to that pre-release version.
-A pre-release version is denoted by appending a hyphen and a series of
-dot separated identifiers immediately following the patch version. The
-**IBM z/OS core collection** releases collections with the pre-release
-naming convention such as **1.1.0-beta1** that would require a range identifier.
+  You may wish to install the collection from source if you cannot access Ansible Galaxy due to firewall or proxy issues, or if you need to install a version of the collection that has not yet been published.
 
-Here is an example an example of installing a pre-release collection:
+  In order to install from source, you must:
 
-.. code-block:: sh
+  1. Install all of the software listed in :ref:`Requirements`.
+  2. Follow the instructions for :ref:`Installing from source`.
 
-   $ ansible-galaxy collection install ibm.ibm_zos_core:==1.1.0-beta1
+* Using a Docker image
 
+  If you do not want to, or can not, install all of the required software for this collection on your system, you may wish to build a Docker image that contains all of the software required to run Ansible playbooks which use this collection.
 
-If you have installed a prior version, you must overwrite an existing
-collection with the ``--force`` option.
+  In order to build a Docker image, you must:
 
-Here are a few examples of installing the **IBM z/OS core collection**:
+  1. Follow the instructions for :ref:`Using a Docker image`.
 
-.. code-block:: sh
+Requirements
+------------
 
-   $ ansible-galaxy collection install ibm.ibm_zos_core
-   $ ansible-galaxy collection install -f ibm.ibm_zos_core
-   $ ansible-galaxy collection install --force ibm.ibm_zos_core
+In order to use this Ansible collection, you must have the following pre-requisite software installed and available:
 
-The collection installation progress will be output to the console. Note the
-location of the installation so that you can review other content included with
-the collection, such as the sample playbook. By default, collections are
-installed in ``~/.ansible/collections``; see the sample output.
+**Python v3.7+**
 
-.. _ansible-galaxy:
-   https://docs.ansible.com/ansible/latest/cli/ansible-galaxy.html
+    Python can be installed from a variety of sources, including the package manager for your operating system (apt, yum, etc).
+    If you install Python from the package manager for your operating system, you must also install the development libraries (usually a package named ``python3-devel``), as these are required when installing modules through ``pip``.
 
-.. code-block:: sh
+    - The official Python website: https://www.python.org/downloads/
+    - The unofficial Python version manager: https://github.com/pyenv/pyenv
 
-   Process install dependency map
-   Starting collection install process
-   Installing 'ibm.ibm_zos_core:1.0.0' to '/Users/user/.ansible/collections/ansible_collections/ibm/ibm_zos_core'
+**Ansible v2.8+**
 
-After installation, the collection content will resemble this hierarchy: :
+    Python can be installed from a variety of sources, including the package manager for your operating system (apt, yum, etc). You can also install it using ``pip``, the package manager for Python:
 
-.. code-block:: sh
+    ::
 
-   ├── collections/
-   │  ├── ansible_collections/
-   │      ├── ibm/
-   │          ├── ibm_zos_core/
-   │              ├── docs/
-   │              ├── playbooks/
-   │              ├── plugins/
-   │                  ├── action/
-   │                  ├── connection/
-   │                  ├── module_utils/
-   │                  ├── modules/
-   │                  └── filter/
+        pip install ansible
 
+**Hyperledger Fabric v1.4.x binaries**
 
-You can use the `-p` option with `ansible-galaxy` to specify the installation
-path, such as:
+    This Ansible collection uses the Hyperledger Fabric v1.4 binaries to interact with the peers and ordering services in your Hyperledger Fabric networks. These binaries include ``configtxgen``, ``peer``, and ``fabric-ca-client``.
 
-.. code-block:: sh
+    You can install these binaries by following the Hyperledger Fabric documentation: https://hyperledger-fabric.readthedocs.io/en/release-1.4/install.html
 
-   $ ansible-galaxy collection install ibm.ibm_zos_core -p /home/ansible/collections
+    These binaries must be on the ``PATH`` of the system that will be used to run your Ansible Playbooks. You can check that the binaries are installed correctly by running:
 
-For more information on installing collections with Ansible Galaxy,
-see `installing collections`_.
+    ::
 
-.. _installing collections:
-   https://docs.ansible.com/ansible/latest/user_guide/collections_using.html#installing-collections-with-ansible-galaxy
+        peer version
 
-Automation Hub and Private Galaxy server
-----------------------------------------
-Configuring access to a private Galaxy server follows the same instructions
-that you would use to configure your client to point to Automation Hub. When
-hosting a private Galaxy server or pointing to Hub, available content is not
-always consistent with what is available on the community Galaxy server.
+**Hyperledger Fabric SDK for Python v0.8.1+**
 
-You can use the `ansible-galaxy`_ command with the option ``install`` to
-install a collection on your system (control node) hosted in Automation Hub
-or a private Galaxy server.
+    This Ansible collection uses the Hyperledger Fabric SDK for Python to interact with the certificate authorities in your Hyperledger Fabric networks.
 
-By default, the ``ansible-galaxy`` command is configured to access
-``https://galaxy.ansible.com`` as the server when you install a
-collection. The `ansible-galaxy` client can be configured to point to Hub or
-other servers, such as a privately running Galaxy server, by configuring the
-server list in the ``ansible.cfg`` file.
+    You can install this SDK using ``pip``, the package manager for Python:
 
-Ansible searches for ``ansible.cfg`` in the following locations in this order:
+    ::
 
-   * ANSIBLE_CONFIG (environment variable if set)
-   * ansible.cfg (in the current directory)
-   * ~/.ansible.cfg (in the home directory)
-   * /etc/ansible/ansible.cfg
+        pip install fabric-sdk-py
 
-To configure a Galaxy server list in the ansible.cfg file:
+**OpenShift client for Python v0.10.3+**
 
-  * Add the server_list option under the [galaxy] section to one or more
-    server names.
-  * Create a new section for each server name.
-  * Set the url option for each server name.
+    This Ansible collection uses the OpenShift client for Python to interact with your Red Hat OpenShift or Kubernetes cluster when installing the IBM Blockchain Platform software.
 
-For Automation Hub, you additionally need to:
+    You can install this SDK using ``pip``, the package manager for Python:
 
-  * Set the auth_url option for each server name.
-  * Set the API token for each server name. For more information on API tokens,
-    see `Get API token from the version dropdown to copy your API token`_.
+    ::
 
-.. _Get API token from the version dropdown to copy your API token:
-   https://cloud.redhat.com/ansible/automation-hub/token/
+        pip install openshift
 
-The following example shows a configuration for Automation Hub, a private
-running Galaxy server, and Galaxy:
+**IBM Blockchain Platform v2.1.3+**
 
-.. code-block:: yaml
+    This Ansible collection requires use of IBM Blockchain Platform v2.1.3 or later. Previous versions of the IBM Blockchain Platform cannot be used with this Ansible collection. You can use the IBM Blockchain Platform on IBM Cloud, or the IBM Blockchain Platform software running in a Red Hat OpenShift or Kubernetes cluster.
 
-   [galaxy]
-   server_list = automation_hub, galaxy, private_galaxy
+    You can not use this Ansible collection to create an instance of the IBM Blockchain Platform service on IBM Cloud. If you want to use the IBM Blockchain Platform on IBM Cloud, you must create the instance before you attempt to use this Ansible collection: https://cloud.ibm.com/catalog/services/blockchain-platform#about
 
-   [galaxy_server.automation_hub]
-   url=https://cloud.redhat.com/api/automation-hub/
-   auth_url=https://sso.redhat.com/auth/realms/redhat-external/protocol/openid-connect/token
-   token=<hub_token>
+    You can use this Ansible collection to install the IBM Blockchain Platform software into a Red Hat Openshift or Kubernetes cluster, if you have not already installed it. To see how to do this, follow this tutorial: `Installing the IBM Blockchain Platform <./tutorials/installing.html>`_
 
-   [galaxy_server.galaxy]
-   url=https://galaxy.ansible.com/
+    If you are using the IBM Blockchain Platform on IBM Cloud, you must create service credentials for this Ansible collection to use. The ``api_endpoint`` and ``api_key`` properties in the service credentials must be passed into the modules and roles in this Ansible collection.
 
-   [galaxy_server.private_galaxy]
-   url=https://galaxy-dev.ansible.com/
-   token=<private_token>
+    If you are using the IBM Blockchain Platform software running in a Red Hat OpenShift or Kubernetes cluster, you must determine the URL of your IBM Blockchain Platform console - this will be the ``api_endpoint`` property. You must also provide a valid API key ``api_key`` and secret ``api_secret`` for the IBM Blockchain Platform console. These properties must be passed into the modules and roles in this Ansible collection.
 
-For more configuration information, see
-`configuring the ansible-galaxy client`_ and `Ansible Configuration Settings`_.
+Installing using Ansible Galaxy
+-------------------------------
 
-.. _configuring the ansible-galaxy client:
-   https://docs.ansible.com/ansible/latest/user_guide/collections_using.html#configuring-the-ansible-galaxy-client
+You can use the ``ansible-galaxy`` command to install a collection from Ansible Galaxy, the package manager for Ansible:
 
-.. _Ansible configuration Settings:
-   https://docs.ansible.com/ansible/latest/reference_appendices/config.html
+::
 
+    ansible-galaxy collection install ibm.blockchain_platform
 
-Local build
------------
+Installing from source
+----------------------
 
-You can use the ``ansible-galaxy collection install`` command to install a
-collection built from source. To build your own collection, you must clone the
-Git repository, build the collection archive, and install the collection. The
-``ansible-galaxy collection build`` command packages the collection into an
-archive that can later be installed locally without having to use Hub or
-Galaxy.
+You can use the ``ansible-galaxy`` command to install a collection built from source. To build your own collection, follow these steps:
 
-To build a collection from the Git repository:
+1. Clone the repository:
 
-   1. Clone the sample repository:
+::
 
-      .. note::
-         * Collection archive names will change depending on the release version.
-         * They adhere to this convention **<namespace>-<collection>-<version>.tar.gz**, for example, **ibm-ibm_zos_core-1.0.0.tar.gz**
+    git clone https://github.com/IBM-Blockchain/ansible-collection.git
 
+2. Build the collection artifact:
 
-   2. Build the collection by running the ``ansible-galaxy collection build``
-   command, which must be run from inside the collection:
+::
 
-      .. code-block:: sh
+    cd ansible-collection
+    ansible-galaxy collection build
 
-         cd ibm_zos_core
-         ansible-galaxy collection build
+3. Install the collection, replacing ``x.y.z`` with the current version:
 
-      Example output of a locally built collection:
+::
 
-      .. code-block:: sh
+    ansible-galaxy collection install ibm-blockchain_platform-x.y.z.tar.gz
 
-         $ ansible-galaxy collection build
-         Created collection for ibm.ibm_zos_core at /Users/user/git/ibm/zos-ansible/ibm_zos_core/ibm-ibm_zos_core-1.0.0.tar.gz
+Using a Docker image
+--------------------
 
-      .. note::
-         * If you build the collection with Ansible version 2.9 or earlier, you will see the following warning that you can ignore.
-         * [WARNING]: Found unknown keys in collection galaxy.yml at '/Users/user/git/ibm/zos-ansible/ibm_zos_core/galaxy.yml': build_ignore
+As an alternative to installing all of the requirements on your system, you can build a Docker image that contains all of the requirements.
+You can then use that Docker image to run your playbooks.
 
+An example Dockerfile can be found here: https://github.com/IBM-Blockchain/ansible-collection/blob/master/docker/Dockerfile
 
-   3. Install the locally built collection:
+The Dockerfile makes use of the Docker multi-stage build feature to reduce the size of the image built by 50%.
 
-      .. code-block:: sh
+Assuming you have built the Docker image and tagged it as ``mydockerorg/ansible``, you can run a playbook by volume mounting it into the container:
 
-         $ ansible-galaxy collection install ibm-ibm_zos_core-1.0.0.tar.gz
+::
 
-      In the output of collection installation, note the installation path to access the sample playbook:
-
-      .. code-block:: sh
-
-         Process install dependency map
-         Starting collection install process
-         Installing 'ibm.ibm_zos_core:1.0.0' to '/Users/user/.ansible/collections/ansible_collections/ibm/ibm_zos_core'
-
-      You can use the ``-p`` option with ``ansible-galaxy`` to specify the
-      installation path, for example, ``ansible-galaxy collection install ibm-ibm_zos_core-1.0.0.tar.gz -p /home/ansible/collections``.
-
-      For more information, see `installing collections with Ansible Galaxy`_.
-
-      .. _installing collections with Ansible Galaxy:
-         https://docs.ansible.com/ansible/latest/user_guide/collections_using.html#installing-collections-with-ansible-galaxy
-
+    docker run --rm -v /path/to/playbooks:/playbooks mydockerorg/ansible ansible-playbook /playbooks/playbook.yml
