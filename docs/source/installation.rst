@@ -5,11 +5,11 @@
 Installation
 ============
 
-There are three options for installing the IBM Blockchain Platform collection for Ansible:
+There are three options for installing the IBM i collection for Ansible:
 
 * Installing using Ansible Galaxy
 
-  Ansible Galaxy is the package manager for Ansible. The collection is published to Ansible Galaxy on a regular basis: https://galaxy.ansible.com/ibm/blockchain_platform
+  Ansible Galaxy is the package manager for Ansible. The collection is published to Ansible Galaxy on a regular basis: https://galaxy.ansible.com/ibm/power_ibmi
 
   In order to install using Ansible Galaxy, you must:
 
@@ -24,14 +24,6 @@ There are three options for installing the IBM Blockchain Platform collection fo
 
   1. Install all of the software listed in :ref:`Requirements`.
   2. Follow the instructions for :ref:`Installing from source`.
-
-* Using a Docker image
-
-  If you do not want to, or can not, install all of the required software for this collection on your system, you may wish to build a Docker image that contains all of the software required to run Ansible playbooks which use this collection.
-
-  In order to build a Docker image, you must:
-
-  1. Follow the instructions for :ref:`Using a Docker image`.
 
 Requirements
 ------------
@@ -54,50 +46,6 @@ In order to use this Ansible collection, you must have the following pre-requisi
 
         pip install ansible
 
-**Hyperledger Fabric v1.4.x binaries**
-
-    This Ansible collection uses the Hyperledger Fabric v1.4 binaries to interact with the peers and ordering services in your Hyperledger Fabric networks. These binaries include ``configtxgen``, ``peer``, and ``fabric-ca-client``.
-
-    You can install these binaries by following the Hyperledger Fabric documentation: https://hyperledger-fabric.readthedocs.io/en/release-1.4/install.html
-
-    These binaries must be on the ``PATH`` of the system that will be used to run your Ansible Playbooks. You can check that the binaries are installed correctly by running:
-
-    ::
-
-        peer version
-
-**Hyperledger Fabric SDK for Python v0.8.1+**
-
-    This Ansible collection uses the Hyperledger Fabric SDK for Python to interact with the certificate authorities in your Hyperledger Fabric networks.
-
-    You can install this SDK using ``pip``, the package manager for Python:
-
-    ::
-
-        pip install fabric-sdk-py
-
-**OpenShift client for Python v0.10.3+**
-
-    This Ansible collection uses the OpenShift client for Python to interact with your Red Hat OpenShift or Kubernetes cluster when installing the IBM Blockchain Platform software.
-
-    You can install this SDK using ``pip``, the package manager for Python:
-
-    ::
-
-        pip install openshift
-
-**IBM Blockchain Platform v2.1.3+**
-
-    This Ansible collection requires use of IBM Blockchain Platform v2.1.3 or later. Previous versions of the IBM Blockchain Platform cannot be used with this Ansible collection. You can use the IBM Blockchain Platform on IBM Cloud, or the IBM Blockchain Platform software running in a Red Hat OpenShift or Kubernetes cluster.
-
-    You can not use this Ansible collection to create an instance of the IBM Blockchain Platform service on IBM Cloud. If you want to use the IBM Blockchain Platform on IBM Cloud, you must create the instance before you attempt to use this Ansible collection: https://cloud.ibm.com/catalog/services/blockchain-platform#about
-
-    You can use this Ansible collection to install the IBM Blockchain Platform software into a Red Hat Openshift or Kubernetes cluster, if you have not already installed it. To see how to do this, follow this tutorial: `Installing the IBM Blockchain Platform <./tutorials/installing.html>`_
-
-    If you are using the IBM Blockchain Platform on IBM Cloud, you must create service credentials for this Ansible collection to use. The ``api_endpoint`` and ``api_key`` properties in the service credentials must be passed into the modules and roles in this Ansible collection.
-
-    If you are using the IBM Blockchain Platform software running in a Red Hat OpenShift or Kubernetes cluster, you must determine the URL of your IBM Blockchain Platform console - this will be the ``api_endpoint`` property. You must also provide a valid API key ``api_key`` and secret ``api_secret`` for the IBM Blockchain Platform console. These properties must be passed into the modules and roles in this Ansible collection.
-
 Installing using Ansible Galaxy
 -------------------------------
 
@@ -105,7 +53,7 @@ You can use the ``ansible-galaxy`` command to install a collection from Ansible 
 
 ::
 
-    ansible-galaxy collection install ibm.blockchain_platform
+    ansible-galaxy collection install iibm.power_ibmi
 
 Installing from source
 ----------------------
@@ -129,20 +77,4 @@ You can use the ``ansible-galaxy`` command to install a collection built from so
 
 ::
 
-    ansible-galaxy collection install ibm-blockchain_platform-x.y.z.tar.gz
-
-Using a Docker image
---------------------
-
-As an alternative to installing all of the requirements on your system, you can build a Docker image that contains all of the requirements.
-You can then use that Docker image to run your playbooks.
-
-An example Dockerfile can be found here: https://github.com/IBM-Blockchain/ansible-collection/blob/master/docker/Dockerfile
-
-The Dockerfile makes use of the Docker multi-stage build feature to reduce the size of the image built by 50%.
-
-Assuming you have built the Docker image and tagged it as ``mydockerorg/ansible``, you can run a playbook by volume mounting it into the container:
-
-::
-
-    docker run --rm -v /path/to/playbooks:/playbooks mydockerorg/ansible ansible-playbook /playbooks/playbook.yml
+    ansible-galaxy collection install ibm-power_ibmi-x.y.z.tar.gz
