@@ -1,2 +1,0 @@
-[testhost]
-74 ansible_ssh_host=9.5.161.179 ansible_ssh_user=TRAVIS ansible_ssh_pass=passw0rd ansible_python_interpreter="/QOpensys/pkgs/bin/python3"
