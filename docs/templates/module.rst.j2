@@ -2,7 +2,7 @@
 {# © Copyright IBM Corporation 2020                                         #}
 {# ------------------------------------------------------------------------ #}
 
-:github_url: https://github.com/LiJunBJZhu/i_collection_core/blob/dev/plugins/modules/{{ module }}.py
+:github_url: https://github.com/IBM/ansible-for-i/tree/devel/plugins/modules/{{ module }}.pyy
 
 .. _{{ module }}_module:
 
@@ -56,6 +56,8 @@ Synopsis
      {% set default_str = (spec.default | string | lower ) %}
 {% elif spec.type == 'int' %}
      {% set default_str = (spec.default | string ) %}
+{% elif spec.type == 'list' %}
+     {% set default_str = (spec.default | string ) %}
 {% else %}
      {% set default = ", default: " + spec.default if spec.default else "" %}
 {% endif %}
@@ -69,10 +71,10 @@ Synopsis
   {{ "  " * level }}| **required**: {{ spec.required | default("false") }}
   {{ "  " * level }}| **type**: {{ spec.type | default("str") }}
 {%     if spec.default %}
-  {{ "  " * level }}| **default**: {{ spec.default }}
+  {{ "  " * level }}| **default**: {{ spec.default | replace('*', '\*')}}
 {%     endif %}
 {%     if spec.choices %}
-  {{ "  " * level }}| **choices**: {{ ", ".join(spec.choices) }}
+  {{ "  " * level }}| **choices**: {{ (", ".join(spec.choices)) | replace('*', '\*')}}
 {%     endif %}
 
 {%     if spec.suboptions %}
@@ -170,7 +172,7 @@ See Also
                        {{ _sample | tojson }}
       {% else %}
 
-      {{ "  " * level }}| **sample**: {{ _sample }}
+      {{ "  " * level }}| **sample**: {{ _sample | replace('*', '\*')}}
 
       {% endif %}
       {% endif %}

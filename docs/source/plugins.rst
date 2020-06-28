@@ -5,32 +5,19 @@
 Plugins
 =======
 
-Plugins that come with the **IBM z/OS core collection** augment Ansible's core
+Plugins that come with the **Power IBM i collection** augment Ansible's core
 functionality. Ansible uses a plugin architecture to enable a rich, flexible
 and expandable feature set.
 
 Action
 ------
 
-* ``zos_ping``: A fork of Ansible `normal.py`_ action plugin that is modified to allow a conditional shebang line in REXX modules.
+* ``ibmi_copy``: An action plugin that is to allow copy a SAVF file to remote IBM i node.
 
-* ``zos_job_submit``: Used to `submit a job`_ from the controller and optionally monitor the job completion.
+* ``ibmi_fetch``: An action plugin that is to allow fetch objects from IBM i node .
 
-.. _normal.py:
-   https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/action/normal.py
-.. _submit a job:
-   modules/zos_job_submit.html
+* ``ibmi_reboot``: An action plugin that is to reboot IBM i node.
 
-Connection
-----------
+* ``ibmi_script``: An action plugin that is to allow run CL scripts and SQL scripts on IBM i nodes .
 
-* ``zos_ssh``: Enables the Ansible controller to communicate with a z/OS target machine by using SSH, with the added support to transfer ASCII as EBCDIC when transferring REXX modules. This connection plugin was forked from the Ansible `ssh.py`_ connection plugin.
-* For further reference, see the `zos_ssh quickstart`_ guide.
-
-.. _ssh.py:
-        https://github.com/ansible/ansible/blob/devel/lib/ansible/plugins/connection/ssh.py
-.. _zos_ssh quickstart:
-   quickstart.html#z-os-connection-plugin
-
-
-
+* ``ibmi_synchronize``: An action plugin that is to allow synchronize SAVF objects.

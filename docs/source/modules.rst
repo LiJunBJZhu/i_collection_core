@@ -1,20 +1,22 @@
-.. ...........................................................................
-.. © Copyright IBM Corporation 2020                                          .
-.. ...........................................................................
+..
+.. SPDX-License-Identifier: Apache-2.0
+..
 
 Modules
 =======
 
-The IBM z/OS core collection contains modules that can be used in a playbook to
-automate tasks on z/OS. Ansible executes each module on the target node and
-returns the result back to the controller. While different modules perform
-different tasks, their interfaces and responses follow similar patterns.
+Modules can be used from the command line or in a playbook task. Ansible
+executes each module, usually on the remote target node, and collects return
+values.
+
+While different modules perform different tasks, their interfaces and responses
+follow similar patterns.
 
 Module reference
 ----------------
 
-Reference material for each module contains documentation on the accepted
-parameters and their expected values.
+Reference material for each module contains documentation on what parameters
+certain modules accept and what values they expect those parameters to be.
 
 
 .. toctree::
@@ -23,6 +25,5 @@ parameters and their expected values.
    :glob:
 
    modules/*
-
 
 
