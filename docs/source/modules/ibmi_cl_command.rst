@@ -80,7 +80,7 @@ Notes
 -----
 
 .. note::
-   CL command with OUTPUT parameter like 'DSPLIBL OUTPUT(*)', 'DSPHDWRSC TYPE(*AHW) OUTPUT(*)' does not have job log.
+   CL command with OUTPUT parameter like 'DSPLIBL OUTPUT(\*)', 'DSPHDWRSC TYPE(\*AHW) OUTPUT(\*)' does not have job log.
 
    CL command can also be run by ``command`` module with simple stdout/stderr, put 'system' as the as first args in ``command`` module.
 

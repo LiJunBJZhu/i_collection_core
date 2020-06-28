@@ -200,7 +200,7 @@ Notes
 .. note::
    ansible.cfg needs to specify interpreter_python=/QOpenSys/pkgs/bin/python3 under[defaults] section.
 
-   Be careful to use '*CNTRLD' for option how_to_end, you need to specify the appropriate value for all the timout options according to the system performance.
+   Be careful to use '\*CNTRLD' for option how_to_end, you need to specify the appropriate value for all the timout options according to the system performance.
 
 
 

@@ -116,7 +116,7 @@ Notes
 
 .. note::
 {%   for note in notes %}
-   {{ note | rst_ify }}
+   {{ note | rst_ify | replace('*','\*')}}
 
 {%   endfor %}
 {% endif %}
