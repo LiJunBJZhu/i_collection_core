@@ -64,7 +64,7 @@ Synopsis
 
 {{ "  " * level }}{{ name }}
 {%     for para in spec.description %}
-  {{ "  " * level }}{{ para | replace('*', '\*') | rst_ify }}
+  {{ "  " * level }}{{ para | rst_ify | replace('*', '\*') }}
 
 {%     endfor %}
 
@@ -152,9 +152,9 @@ See Also
 
       {{ entry | indent(level, True) }}
       {% if _description is iterable and _description is not string %}
-{{ "  " * (level) }}| {{ _description[0] }}
+{{ "  " * (level) }}| {{ _description[0] | rst_ify }}
       {% else %}
-{{ "  " * (level) }}| {{ _description }}
+{{ "  " * (level) }}| {{ _description | rst_ify}}
       {% endif %}
 
       {% if _returned %}

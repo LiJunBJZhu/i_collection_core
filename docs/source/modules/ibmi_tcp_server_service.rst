@@ -61,7 +61,7 @@ state
 
   ``restarted`` will always bounce the service.
 
-  **At least one of state and enabled are required.**
+  \*\*At least one of state and enabled are required.\*\*
 
 
   | **required**: True

@@ -235,7 +235,7 @@ Return Values
       
                               
        format
-        | The save file's format. Only support C(*SAVF) by now.
+        | The save file's format. Only support ``*SAVF`` by now.
       
         | **returned**: always
         | **type**: str
