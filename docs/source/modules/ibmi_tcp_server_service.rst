@@ -48,7 +48,7 @@ joblog
 
      
 name_list
-  The name of the tcp server service. The valid value are "*ALL", "*AUTOSTART", "*BOOTP", "*DBG", "*DDM", "*DHCP", "*DIRSRV", "*DLFM", "*DNS", "*DOMINO", "*EDRSQL", "*FTP", "*HTTP", "*HOD", "*IAS", "*INETD", "*LPD", "*MGTC", "*NETSVR", "*NSLD", "*NTP", "*ODPA", "*OMPROUTED", "*ONDMD", "*POP", "*QOS", "*REXEC", "*ROUTED", "*SLP", "*SMTP", "*SNMP", "*SRVSPTPRX", "*SSHD", "*TCM", "*TELNET", "*TFTP", "*VPN", "*WEBFACING".
+  The name of the tcp server service. The valid value are "\*ALL", "\*AUTOSTART", "\*BOOTP", "\*DBG", "\*DDM", "\*DHCP", "\*DIRSRV", "\*DLFM", "\*DNS", "\*DOMINO", "\*EDRSQL", "\*FTP", "\*HTTP", "\*HOD", "\*IAS", "\*INETD", "\*LPD", "\*MGTC", "\*NETSVR", "\*NSLD", "\*NTP", "\*ODPA", "\*OMPROUTED", "\*ONDMD", "\*POP", "\*QOS", "\*REXEC", "\*ROUTED", "\*SLP", "\*SMTP", "\*SNMP", "\*SRVSPTPRX", "\*SSHD", "\*TCM", "\*TELNET", "\*TFTP", "\*VPN", "\*WEBFACING".
 
 
   | **required**: True

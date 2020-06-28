@@ -48,7 +48,7 @@ joblog
 
      
 name_list
-  The name of the host server service. The valid value are "*ALL", "*CENTRAL", "*DATABASE", "*DTAQ", "*FILE", "*NETPRT", "*RMTCMD", "*SIGNON", "*SVRMAP".
+  The name of the host server service. The valid value are "\*ALL", "\*CENTRAL", "\*DATABASE", "\*DTAQ", "\*FILE", "\*NETPRT", "\*RMTCMD", "\*SIGNON", "\*SVRMAP".
 
 
   | **required**: True

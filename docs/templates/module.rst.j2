@@ -64,7 +64,7 @@ Synopsis
 
 {{ "  " * level }}{{ name }}
 {%     for para in spec.description %}
-  {{ "  " * level }}{{ para | rst_ify }}
+  {{ "  " * level }}{{ para | replace('*', '\*') | rst_ify }}
 
 {%     endfor %}
 

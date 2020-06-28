@@ -48,7 +48,7 @@ subsystem
 
      
 user
-  Specifies the name of the user whose jobs are displayed, ``'*ALL'`` for all users. If subsystem is ``'*ALL'``, this option is ignored.
+  Specifies the name of the user whose jobs are displayed, ``'\*ALL'`` for all users. If subsystem is ``'\*ALL'``, this option is ignored.
 
 
   | **required**: false

@@ -42,7 +42,7 @@ connect_timeout
 controlled_end_delay_time
   Specifies the amount of time(1-99999), in seconds, that the system allows a controlled end to be performed by the active subsystems.
 
-  If the value is greater than 99999, '*NOLIMIT' will be used in PWRDWNSYS commnad.
+  If the value is greater than 99999, '\*NOLIMIT' will be used in PWRDWNSYS commnad.
 
 
   | **required**: false
