@@ -1,12 +1,13 @@
-..
-.. SPDX-License-Identifier: Apache-2.0
-..
 
-:github_url: https://github.com/LiJunBJZhu/i_collection_core/tree/master/plugins/modules/ibmi_iasp.py
+:github_url: https://github.com/IBM/ansible-for-i/tree/devel/plugins/modules/ibmi_iasp.pyy
+
+.. _ibmi_iasp_module:
 
 
-ibmi_iasp -- Control IASP on target IBMi node
-=============================================
+ibmi_iasp -- Control IASP
+=========================
+
+
 
 .. contents::
    :local:
@@ -15,11 +16,10 @@ ibmi_iasp -- Control IASP on target IBMi node
 
 Synopsis
 --------
-
-Control IASP on target IBMi node
-
-For non-IBMi targets, no need
-
+- Control IASP.
+- For IBM i V7R2, PTF SI72162 is required.
+- For IBM i V7R3, PTF SI72161 is required.
+- For non-IBM i targets, no need.
 
 
 
@@ -28,41 +28,86 @@ For non-IBMi targets, no need
 Parameters
 ----------
 
-  extra_parameters (optional, str,  )
-    extra parameter is appended at the end of create operation
+
+     
+asp_type
+  The asp_type of new create iasp.
 
 
-  primary_asp (optional, str, None)
-    The primary_asp of new create iasp
+  | **required**: false
+  | **type**: str
+  | **default**: \*PRIMARY
+  | **choices**: \*PRIMARY, \*SECONDARY, \*UDFS
 
 
-  name (True, str, None)
-    The name of the iasp
+     
+disks
+  The list of the unconfigure disks.
 
 
-  operation (True, str, None)
-    ``create``/``delete``/``add_disks`` are idempotent actions that will not run commands unless necessary.
-
-    ``view`` will return the iasp state
-
-    **At least one of operation are required.**
+  | **required**: false
+  | **type**: list
 
 
-  disks (optional, list, None)
-    The list of the unconfigure disks
+     
+extra_parameters
+  Extra parameter is appended at the end of create operation.
 
 
-  synchronous (optional, bool, True)
-    synchronous execute the iasp command
+  | **required**: false
+  | **type**: str
+  | **default**:  
 
 
-  asp_type (optional, str, *PRIMARY)
-    The asp_type of new create iasp
+     
+joblog
+  If set to ``true``, append JOBLOG to stderr/stderr_lines.
 
 
+  | **required**: false
+  | **type**: bool
 
 
+     
+name
+  The name of the iasp.
 
+
+  | **required**: True
+  | **type**: str
+
+
+     
+operation
+  ``create``/``delete``/``add_disks`` are idempotent actions that will not run commands unless necessary.
+
+  ``view`` will return the iasp state
+
+  **At least one of operation are required.**
+
+
+  | **required**: True
+  | **type**: str
+  | **choices**: create, add_disks, delete, display
+
+
+     
+primary_asp
+  The primary_asp of new create iasp.
+
+
+  | **required**: false
+  | **type**: str
+
+
+     
+synchronous
+  Synchronous execute the iasp command.
+
+
+  | **required**: false
+  | **type**: bool
+  | **default**: True
 
 
 
@@ -72,80 +117,156 @@ Examples
 
 .. code-block:: yaml+jinja
 
-    
-    - name: start host server service
-      ibmi_iasp:
-        name: 'IASP1'
-        operation: 'create'
-        disks: ['DMP002', 'DMP019']
+   
+   - name: start host server service
+     ibmi_iasp:
+       name: 'IASP1'
+       operation: 'create'
+       disks: ['DMP002', 'DMP019']
+
+
+
+
+
+
 
 
 
 Return Values
 -------------
 
-  stderr_lines (always, list, ['Generic failure'])
-    The command standard error split in lines
 
+   
+                              
+       job_log
+        | The IBM i job log of the task executed.
+      
+        | **returned**: always
+        | **type**: list      
+        | **sample**:
 
-  end (always, str, 2019-12-02 11:07:54.064969)
-    The command execution end time
+              .. code-block::
 
+                       [{"FROM_INSTRUCTION": "318F", "FROM_LIBRARY": "QSYS", "FROM_MODULE": "", "FROM_PROCEDURE": "", "FROM_PROGRAM": "QWTCHGJB", "FROM_USER": "CHANGLE", "MESSAGE_FILE": "QCPFMSG", "MESSAGE_ID": "CPD0912", "MESSAGE_LIBRARY": "QSYS", "MESSAGE_SECOND_LEVEL_TEXT": "Cause . . . . . :   This message is used by application programs as a general escape message.", "MESSAGE_SUBTYPE": "", "MESSAGE_TEXT": "Printer device PRT01 not found.", "MESSAGE_TIMESTAMP": "2020-05-20-21.41.40.845897", "MESSAGE_TYPE": "DIAGNOSTIC", "ORDINAL_POSITION": "5", "SEVERITY": "20", "TO_INSTRUCTION": "9369", "TO_LIBRARY": "QSYS", "TO_MODULE": "QSQSRVR", "TO_PROCEDURE": "QSQSRVR", "TO_PROGRAM": "QSQSRVR"}]
+            
+      
+      
+                              
+       start
+        | The command execution start time.
+      
+        | **returned**: always
+        | **type**: str
+        | **sample**: 2019-12-02 11:07:53.757435
 
-  stdout (always, str, CPCB719: Configure Device ASP *DELETE request completed.)
-    The command standard output
+            
+      
+      
+                              
+       end
+        | The command execution end time.
+      
+        | **returned**: always
+        | **type**: str
+        | **sample**: 2019-12-02 11:07:54.064969
 
+            
+      
+      
+                              
+       delta
+        | The command execution delta time.
+      
+        | **returned**: always
+        | **type**: str
+        | **sample**: 0:00:00.307534
 
-  asp_info (always, str, [{'ASP_STATE': 'VARIED OFF', 'UNPROTECTED_CAPACITY_AVAILABLE': '0', 'BALANCE_DATA_MOVED': '0', 'RESOURCE_NAME': 'IASP1', 'MAIN_STORAGE_DUMP_SPACE': '0', 'TRACE_STATUS': '', 'PROTECTED_CAPACITY_AVAILABLE': '0', 'END_IMMEDIATE': '', 'TRACE_TIMESTAMP': '', 'BALANCE_TIMESTAMP': '', 'STORAGE_THRESHOLD_PERCENTAGE': '90', 'ERROR_LOG_SPACE': '0', 'MULTIPLE_CONNECTION_DISK_UNITS': 'YES', 'COMPRESSED_DISK_UNITS': 'NONE', 'TOTAL_CAPACITY_AVAILABLE': '0', 'ASP_TYPE': 'PRIMARY', 'TRACE_DURATION': '0', 'CHANGES_WRITTEN_TO_DISK': 'YES', 'MACHINE_LOG_SPACE': '0', 'SYSTEM_STORAGE': '2', 'OVERFLOW_RECOVERY_RESULT': '', 'PROTECTED_CAPACITY': '0', 'PRIMARY_ASP_RESOURCE_NAME': '', 'DEVICE_DESCRIPTION_NAME': '', 'TOTAL_CAPACITY': '0', 'MICROCODE_SPACE': '0', 'DISK_UNITS_PRESENT': 'ALL', 'BALANCE_TYPE': '', 'ASP_NUMBER': '144', 'MACHINE_TRACE_SPACE': '0', 'BALANCE_STATUS': '', 'BALANCE_DATA_REMAINING': '0', 'NUMBER_OF_DISK_UNITS': '1', 'COMPRESSION_RECOVERY_POLICY': 'OVERFLOW IMMEDIATE', 'OVERFLOW_STORAGE': '0', 'UNPROTECTED_CAPACITY': '0', 'RDB_NAME': 'IASP1'}])
-    the asp_info of the identify iasp
+            
+      
+      
+                              
+       stdout
+        | The command standard output.
+      
+        | **returned**: always
+        | **type**: str
+        | **sample**: CPCB719: Configure Device ASP \*DELETE request completed.
 
+            
+      
+      
+                              
+       stderr
+        | The command standard error.
+      
+        | **returned**: always
+        | **type**: str
+        | **sample**: Generic failure
 
-  cmd (always, str, CFGDEVASP ASPDEV(YFTEST) ACTION(*DELETE) CONFIRM(*NO))
-    The command executed by the task
+            
+      
+      
+                              
+       cmd
+        | The command executed by the task.
+      
+        | **returned**: always
+        | **type**: str
+        | **sample**: CFGDEVASP ASPDEV(YFTEST) ACTION(\*DELETE) CONFIRM(\*NO)
 
+            
+      
+      
+                              
+       rc
+        | The command return code (0 means success, non-zero means failure).
+      
+        | **returned**: always
+        | **type**: int
+        | **sample**: 255
 
-  start (always, str, 2019-12-02 11:07:53.757435)
-    The command execution start time
+            
+      
+      
+                              
+       asp_info
+        | The asp_info of the identify iasp.
+      
+        | **returned**: always
+        | **type**: list      
+        | **sample**:
 
+              .. code-block::
 
-  delta (always, str, 0:00:00.307534)
-    The command execution delta time
+                       [{"ASP_NUMBER": "144", "ASP_STATE": "VARIED OFF", "ASP_TYPE": "PRIMARY", "BALANCE_DATA_MOVED": "0", "BALANCE_DATA_REMAINING": "0", "BALANCE_STATUS": "", "BALANCE_TIMESTAMP": "", "BALANCE_TYPE": "", "CHANGES_WRITTEN_TO_DISK": "YES", "COMPRESSED_DISK_UNITS": "NONE", "COMPRESSION_RECOVERY_POLICY": "OVERFLOW IMMEDIATE", "DEVICE_DESCRIPTION_NAME": "", "DISK_UNITS_PRESENT": "ALL", "END_IMMEDIATE": "", "ERROR_LOG_SPACE": "0", "MACHINE_LOG_SPACE": "0", "MACHINE_TRACE_SPACE": "0", "MAIN_STORAGE_DUMP_SPACE": "0", "MICROCODE_SPACE": "0", "MULTIPLE_CONNECTION_DISK_UNITS": "YES", "NUMBER_OF_DISK_UNITS": "1", "OVERFLOW_RECOVERY_RESULT": "", "OVERFLOW_STORAGE": "0", "PRIMARY_ASP_RESOURCE_NAME": "", "PROTECTED_CAPACITY": "0", "PROTECTED_CAPACITY_AVAILABLE": "0", "RDB_NAME": "IASP1", "RESOURCE_NAME": "IASP1", "STORAGE_THRESHOLD_PERCENTAGE": "90", "SYSTEM_STORAGE": "2", "TOTAL_CAPACITY": "0", "TOTAL_CAPACITY_AVAILABLE": "0", "TRACE_DURATION": "0", "TRACE_STATUS": "", "TRACE_TIMESTAMP": "", "UNPROTECTED_CAPACITY": "0", "UNPROTECTED_CAPACITY_AVAILABLE": "0"}]
+            
+      
+      
+                              
+       stdout_lines
+        | The command standard output split in lines.
+      
+        | **returned**: always
+        | **type**: list      
+        | **sample**:
 
+              .. code-block::
 
-  stderr (always, str, Generic failure)
-    The command standard error
+                       ["CPCB719: Configure Device ASP *DELETE request completed."]
+            
+      
+      
+                              
+       stderr_lines
+        | The command standard error split in lines.
+      
+        | **returned**: always
+        | **type**: list      
+        | **sample**:
 
+              .. code-block::
 
-  rc (always, int, 255)
-    The command return code (0 means success, non-zero means failure)
-
-
-  stdout_lines (always, list, ['CPCB719: Configure Device ASP *DELETE request completed.'])
-    The command standard output split in lines
-
-
-  rc_msg (always, str, Generic failure)
-    Meaning of the return code
-
-
-
-
-
-Status
-------
-
-
-
-
-- This  is not guaranteed to have a backwards compatible interface. *[preview]*
-
-
-- This  is maintained by community.
-
-
-
-Authors
-~~~~~~~
-
-- Jin Yi Fan(@jinyifan)
-
+                       ["Generic failure"]
+            
+      
+        

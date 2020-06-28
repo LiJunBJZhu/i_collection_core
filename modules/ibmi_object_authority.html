@@ -1,44 +1,43 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>ibmi_object_authority – Grant, Revoke or Display Object Authority &mdash; Ansible Collection  documentation</title>
+  <title>ibmi_object_authority – Grant, revoke or display object authority &mdash; IBM power_ibmi collection 1.0.0 documentation</title>
   
-
-  
-  
-    <link rel="shortcut icon" href="../_static/favicon.ico"/>
-  
-  
-  
-
-  
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../_static/jquery.js"></script>
-        <script type="text/javascript" src="../_static/underscore.js"></script>
-        <script type="text/javascript" src="../_static/doctools.js"></script>
-        <script type="text/javascript" src="../_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-
-    
 
   
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ibmi_object_find – Find specific IBM i object(s)." href="ibmi_object_find.html" />
-    <link rel="prev" title="ibmi_message – Search or reply message on a remote IBMi node" href="ibmi_message.html" /> 
+    <link rel="prev" title="ibmi_message – Search message" href="ibmi_message.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -52,7 +51,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> Ansible Collection
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> IBM power_ibmi collection
           
 
           
@@ -75,6 +74,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -88,49 +88,51 @@
 </ul>
 <p class="caption"><span class="caption-text">Reference</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../plugins.html">Plugins</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../modules.html">Modules</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../modules.html#module-reference">Module reference</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="ibmi_at.html">ibmi_at – Schedule a batch job on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_copy.html">ibmi_copy – Copy a save file from local to a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_device_vary.html">ibmi_device_vary – vary on or off target device on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_display_subsystem.html">ibmi_display_subsystem – display all currently active subsystems or currently active jobs in a subsystem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_end_subsystem.html">ibmi_end_subsystem – end a subsystem</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_fetch.html">ibmi_fetch – Fetch objects or a library from a remote IBMi node and store on local</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_at.html">ibmi_at – Schedule a batch job</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_cl_command.html">ibmi_cl_command – Executes a CL(Control language) command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_copy.html">ibmi_copy – Copy a save file from local to a remote IBM i node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_device_vary.html">ibmi_device_vary – Vary on or off target device</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_display_subsystem.html">ibmi_display_subsystem – Displays all currently active subsystems or currently active jobs in a subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_end_subsystem.html">ibmi_end_subsystem – End an active subsystem.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_fetch.html">ibmi_fetch – Fetch objects or a library from a remote IBM i node and store on local</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ibmi_fix.html">ibmi_fix – Install, remove or query an individual fix or a set of fixes on to IBM i system.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ibmi_fix_imgclg.html">ibmi_fix_imgclg – Install fixes such as PTF, PTF Group, Technology refresh to the target IBM i system by image catalog.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_host_server_service.html">ibmi_host_server_service – Manage host server on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_iasp.html">ibmi_iasp – Control IASP on target IBMi node</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_get_nonconfigure_disks.html">ibmi_get_nonconfigure_disks – Get all nonconfigure disks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_host_server_service.html">ibmi_host_server_service – Manage host server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_iasp.html">ibmi_iasp – Control IASP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_install_product_from_savf.html">ibmi_install_product_from_savf – Install the licensed program(product) from a save file.</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ibmi_job.html">ibmi_job – Returns job information according to inputs.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_lib_restore.html">ibmi_lib_restore – Restore one library on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_lib_save.html">ibmi_lib_save – Save one libary on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_message.html">ibmi_message – Search or reply message on a remote IBMi node</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">ibmi_object_authority – Grant, Revoke or Display Object Authority</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_lib_restore.html">ibmi_lib_restore – Restore one library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_lib_save.html">ibmi_lib_save – Save one libary</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_message.html">ibmi_message – Search message</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ibmi_object_authority – Grant, revoke or display object authority</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#synopsis">Synopsis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#parameters">Parameters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#notes">Notes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#see-also">See Also</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#see-also">See Also</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#return-values">Return Values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#status">Status</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="ibmi_object_find.html">ibmi_object_find – Find specific IBM i object(s).</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_object_restore.html">ibmi_object_restore – Restore one or more objects on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_object_save.html">ibmi_object_save – Save one or more objects on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_reboot.html">ibmi_reboot – Reboot a machine</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_object_restore.html">ibmi_object_restore – Restore one or more objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_object_save.html">ibmi_object_save – Save one or more objects</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_reboot.html">ibmi_reboot – Reboot an IBM i machine</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ibmi_save_product_to_savf.html">ibmi_save_product_to_savf – Save the the licensed program(product) to a save file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_script.html">ibmi_script – Execute a local cl/sql script file on a remote ibm i node.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_script_execute.html">ibmi_script_execute – Execute a cl/sql script file on a remote ibm i node.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_sql_execute.html">ibmi_sql_execute – Executes a SQL non-DQL(Data Query Language) statement on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_sql_query.html">ibmi_sql_query – Executes a SQL DQL(Data Query Language) statement on a remote IBMi node.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_start_subsystem.html">ibmi_start_subsystem – start a subsystem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_script.html">ibmi_script – Execute a local cl/sql script file.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_script_execute.html">ibmi_script_execute – Execute a cl/sql script file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_sql_execute.html">ibmi_sql_execute – Executes a SQL non-DQL(Data Query Language) statement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_sql_query.html">ibmi_sql_query – Executes a SQL DQL(Data Query Language) statement.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_start_subsystem.html">ibmi_start_subsystem – Start an inactive subsystem</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ibmi_submit_job.html">ibmi_submit_job – Submit a job on IBM i system. This module functions like SBMJOB.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_sync.html">ibmi_sync – Synchronize a save file from current ibm i node A to another ibm i node B.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_synchronize.html">ibmi_synchronize – Synchronize a save file from ibm i node A to another ibm i node B.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_sync.html">ibmi_sync – Synchronize a save file from current IBM i node A to another IBM i node B.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_synchronize.html">ibmi_synchronize – Synchronize a save file from IBM i node A to another IBM i node B</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ibmi_tcp_interface.html">ibmi_tcp_interface – Add, change, remove or query a tcp/ip interface.</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_tcp_server_service.html">ibmi_tcp_server_service – Manage tcp server on a remote IBMi node</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_uninstall_product.html">ibmi_uninstall_product – delete the objects that make up the licensed program(product)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ibmi_user_and_group.html">ibmi_user_and_group – Create, Change or Display a user(or group) profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_tcp_server_service.html">ibmi_tcp_server_service – Manage tcp server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_uninstall_product.html">ibmi_uninstall_product – Delete the objects that make up the licensed program(product)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibmi_user_and_group.html">ibmi_user_and_group – Create, change or display a user(or group) profile</a></li>
 </ul>
 </li>
 </ul>
@@ -140,6 +142,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -149,7 +152,7 @@
       <nav class="wy-nav-top" aria-label="top navigation">
         
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Ansible Collection</a>
+          <a href="../index.html">IBM power_ibmi collection</a>
         
       </nav>
 
@@ -180,11 +183,11 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../modules.html">Modules</a> &raquo;</li>
         
-      <li>ibmi_object_authority – Grant, Revoke or Display Object Authority</li>
+      <li>ibmi_object_authority – Grant, revoke or display object authority</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -192,7 +195,7 @@
             
             
               <!-- User defined GitHub URL -->
-              <a href="https://github.com/LiJunBJZhu/i_collection_core/tree/master/plugins/modules/ibmi_object_authority.py" class="fa fa-github"> Edit on GitHub</a>
+              <a href="https://github.com/IBM/ansible-for-i/tree/devel/plugins/modules/ibmi_object_authority.pyy" class="fa fa-github"> Edit on GitHub</a>
             
           
         
@@ -207,125 +210,157 @@
            <div itemprop="articleBody">
             
   <div class="section" id="ibmi-object-authority-grant-revoke-or-display-object-authority">
-<h1>ibmi_object_authority – Grant, Revoke or Display Object Authority<a class="headerlink" href="#ibmi-object-authority-grant-revoke-or-display-object-authority" title="Permalink to this headline">¶</a></h1>
+<span id="ibmi-object-authority-module"></span><h1>ibmi_object_authority – Grant, revoke or display object authority<a class="headerlink" href="#ibmi-object-authority-grant-revoke-or-display-object-authority" title="Permalink to this headline">¶</a></h1>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#synopsis" id="id33">Synopsis</a></li>
-<li><a class="reference internal" href="#parameters" id="id34">Parameters</a></li>
-<li><a class="reference internal" href="#notes" id="id35">Notes</a></li>
-<li><a class="reference internal" href="#see-also" id="id36">See Also</a></li>
-<li><a class="reference internal" href="#examples" id="id37">Examples</a></li>
-<li><a class="reference internal" href="#return-values" id="id38">Return Values</a></li>
-<li><a class="reference internal" href="#status" id="id39">Status</a></li>
+<li><p><a class="reference internal" href="#synopsis" id="id15">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id16">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id17">Examples</a></p></li>
+<li><p><a class="reference internal" href="#see-also" id="id18">See Also</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id19">Return Values</a></p></li>
 </ul>
 </div>
 <div class="section" id="synopsis">
-<h2><a class="toc-backref" href="#id33">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="docutils literal notranslate"><span class="pre">ibmi_object_authority</span></code> module can do the named object(s) authority management(grant, revoke and display).</p>
-</div>
-<div class="section" id="parameters">
-<h2><a class="toc-backref" href="#id34">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><dl class="docutils">
-<dt>asp_device (optional, str, <a href="#id1"><span class="problematic" id="id2">*</span></a>)</dt>
-<dd><p class="first">Specifies the auxiliary storage pool (ASP) device name where the library that contains the object (OBJ parameter) is located.</p>
-<p>The ASP group name is the name of the primary ASP device within the ASP group.</p>
-<p class="last">Valid for all the operations, but operations display will igonre this option.</p>
-</dd>
-<dt>ref_object_type (optional, str, <a href="#id3"><span class="problematic" id="id4">*</span></a>OBJTYPE)</dt>
-<dd><p class="first">Specify the reference object type of the object for which specific authorities are to be granted, revoked or displayed to the specified users.</p>
-<p>Supported reference object type refer to <a class="reference external" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm">https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm</a></p>
-<p class="last">Valid only for operation grant_ref</p>
-</dd>
-<dt>ref_object_library (optional, str, <a href="#id5"><span class="problematic" id="id6">*</span></a>LIBL)</dt>
-<dd><p class="first">Specify the name of the library to be searched.</p>
-<p class="last">Valid only for operation grant_ref</p>
-</dd>
-<dt>object_type (True, str, None)</dt>
-<dd><p class="first">Specify the object type of the object for which specific authorities are to be granted, revoked or displayed to the specified users.</p>
-<p>Supported object type refer to <a class="reference external" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm">https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm</a></p>
-<p class="last">Valid for all the operations</p>
-</dd>
-<dt>authority (optional, list, [u’<a href="#id7"><span class="problematic" id="id8">*</span></a>CHANGE’])</dt>
-<dd><p class="first">Specifies the authority to be granted or revoked to the users specified for the Users (USER) parameter.</p>
-<p class="last">Valid only for operations grant and revoke</p>
-</dd>
-<dt>object_library (optional, str, <a href="#id9"><span class="problematic" id="id10">*</span></a>LIBL)</dt>
-<dd><p class="first">Specify the name of the library to be searched.</p>
-<p>Valid for all the operations</p>
-<p>When operation is display, special value as ‘<a href="#id11"><span class="problematic" id="id12">*</span></a>LIBL’, ‘<a href="#id13"><span class="problematic" id="id14">*</span></a>CURLIB’, ‘<a href="#id15"><span class="problematic" id="id16">*</span></a>ALL’, ‘<a href="#id17"><span class="problematic" id="id18">*</span></a>ALLUSR’, ‘<a href="#id19"><span class="problematic" id="id20">*</span></a>USRLIBL’, ‘<a href="#id21"><span class="problematic" id="id22">*</span></a>ALLAVL’, ‘<a href="#id23"><span class="problematic" id="id24">*</span></a>ALLUSRAVL’ are not supported.</p>
-<p class="last">The special values and value ‘’ will be treate as search all the ASP scope under the current thread.</p>
-</dd>
-<dt>ref_object_name (optional, str, )</dt>
-<dd><p class="first">Specify the name of the reference object for which specific authority is to be granted, revoked or displayed to one or more users.</p>
-<p class="last">Valid only for operation grant_ref, you must specify a value other than ‘’</p>
-</dd>
-<dt>object_name (True, str, None)</dt>
-<dd><p class="first">Specify the name of the object for which specific authority is to be granted, revoked or displayed to one or more users.</p>
-<p class="last">Valid for all the operations</p>
-</dd>
-<dt>replace_authority (optional, bool, False)</dt>
-<dd><p class="first">Specifies whether the authorities replace the user’s current authorities.</p>
-<p class="last">Valid only for operations grant</p>
-</dd>
-<dt>user (optional, list, [u’’])</dt>
-<dd><p class="first">Specifies one or more users to whom authority for the named object is to be granted or revoked.</p>
-<p class="last">Valid only for operations grant and revoke</p>
-</dd>
-<dt>authorization_list (optional, str, )</dt>
-<dd><p class="first">Specifies the authorization list that is to grant or revok on the object, only vaild for operation grant_autl or revoke_autl</p>
-<p class="last">Valid only for operations grant_autl and revoke_autl, you must specify a value other than ‘’</p>
-</dd>
-<dt>operation (True, str, None)</dt>
-<dd><p class="first">The authority operation.</p>
-<p>Valid for all the operations</p>
-<p>Operation grant is to grant user(s) authority(s) to object(s)</p>
-<p>Operation revoke is to revoke user(s) authority(s) from object(s)</p>
-<p>Operation display is to display object(s)’s authority information</p>
-<p>Operation grant_autl is to grant a authorization list(the authorization list object contains the list of authority) to object(s)</p>
-<p>Operation revoke_autl is to revoke authorization list from object(s)</p>
-<p>Operation grant_ref is to grant the reference object to be queried to obtain authorization information</p>
-<p class="last">for more information about reference object, refer to <a class="reference external" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm">https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm</a></p>
-</dd>
-<dt>ref_asp_device (optional, str, <a href="#id25"><span class="problematic" id="id26">*</span></a>)</dt>
-<dd><p class="first">Specifies the auxiliary storage pool (ASP) device name where the library that contains the reference object is located.</p>
-<p>The ASP group name is the name of the primary ASP device within the ASP group.</p>
-<p class="last">Valid only for operation grant_ref</p>
-</dd>
-<dt>asp_group (optional, str, )</dt>
-<dd><p class="first">Specifies the name of the auxiliary storage pool (ASP) group to set for the current thread.</p>
-<p>The ASP group name is the name of the primary ASP device within the ASP group.</p>
-<p>The different for asp_group and (<a href="#id40"><span class="problematic" id="id41">ref_</span></a>)asp_device are,</p>
-<p>the asp_group make the current ansible thread run under the asp_group.</p>
-<p>the (<a href="#id42"><span class="problematic" id="id43">ref_</span></a>)asp_device is the search scope for the object.</p>
-<p>If you want to searh the (<a href="#id44"><span class="problematic" id="id45">ref_</span></a>)object in an ASP, the asp_group must be set and varied on,</p>
-<p>(ref)asp_device can be set as ‘*’ for searching in the ASP and also the system ASP or asp_group name to just search in this ASP.</p>
-<p class="last">Valid for all the operations</p>
-</dd>
-</dl>
-</div></blockquote>
-</div>
-<div class="section" id="notes">
-<h2><a class="toc-backref" href="#id35">Notes</a><a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li>Ansible hosts file need to specify ansible_python_interpreter=/QOpenSys/pkgs/bin/python3(or python2)</li>
+<h2><a class="toc-backref" href="#id15">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">ibmi_object_authority</span></code> module can do the named object(s) authority management(grant, revoke and display).</p></li>
 </ul>
 </div>
+<div class="section" id="parameters">
+<h2><a class="toc-backref" href="#id16">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<dl>
+<dt>asp_device</dt><dd><p>Specifies the auxiliary storage pool (ASP) device name where the library that contains the object (OBJ parameter) is located.</p>
+<p>The ASP group name is the name of the primary ASP device within the ASP group.</p>
+<p>Valid for all the operations, but operations display will igonre this option.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>default</strong>: *</div>
 </div>
-<div class="section" id="see-also">
-<h2><a class="toc-backref" href="#id36">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<dl class="last docutils">
-<dt><span class="xref std std-ref">ibmi_object_find_module</span></dt>
-<dd>The official documentation on the <strong>ibmi_object_find</strong> module.</dd>
+</dd>
+<dt>asp_group</dt><dd><p>Specifies the name of the auxiliary storage pool (ASP) group to set for the current thread. The ASP group name is the name of the primary ASP device within the ASP group. The different for asp_group and (<a href="#id20"><span class="problematic" id="id21">ref_</span></a>)asp_device are, the asp_group make the current ansible thread run under the asp_group. the (<a href="#id22"><span class="problematic" id="id23">ref_</span></a>)asp_device is the search scope for the object. If you want to searh the (<a href="#id24"><span class="problematic" id="id25">ref_</span></a>)object in an ASP, the asp_group must be set and varied on, (ref)asp_device can be set as ‘*’ for searching in the ASP and also the system ASP or asp_group name to just search in this ASP.</p>
+<p>Valid for all the operations</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>default</strong>: *SYSBAS</div>
+</div>
+</dd>
+<dt>authority</dt><dd><p>Specifies the authority to be granted or revoked to the users specified for the Users (USER) parameter.</p>
+<p>Valid only for operations grant and revoke.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: list</div>
+<div class="line"><strong>default</strong>: [‘*CHANGE’]</div>
+<div class="line"><strong>choices</strong>: *CHANGE, *ALL, *USE, *EXCLUDE, *AUTL, *OBJALTER, *OBJEXIST, *OBJMGT, *OBJOPR, *OBJREF, *ADD, *DLT, *READ, *UPD, *EXECUTE</div>
+</div>
+</dd>
+<dt>authorization_list</dt><dd><p>Specifies the authorization list that is to grant or revok on the object, only vaild for operation grant_autl or revoke_autl.</p>
+<p>Valid only for operations grant_autl and revoke_autl, you must specify a value other than ‘’.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: str</div>
+</div>
+</dd>
+<dt>joblog</dt><dd><p>If set to <code class="docutils literal notranslate"><span class="pre">true</span></code>, output the avaiable job log even the rc is 0(success).</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: bool</div>
+</div>
+</dd>
+<dt>object_library</dt><dd><p>Specify the name of the library to be searched.</p>
+<p>Valid for all the operations.</p>
+<p>When operation is display, special value as ‘<a href="#id1"><span class="problematic" id="id2">*</span></a>LIBL’, ‘<a href="#id3"><span class="problematic" id="id4">*</span></a>CURLIB’, ‘<a href="#id5"><span class="problematic" id="id6">*</span></a>ALL’, ‘<a href="#id7"><span class="problematic" id="id8">*</span></a>ALLUSR’, ‘<a href="#id9"><span class="problematic" id="id10">*</span></a>USRLIBL’, ‘<a href="#id11"><span class="problematic" id="id12">*</span></a>ALLAVL’, ‘<a href="#id13"><span class="problematic" id="id14">*</span></a>ALLUSRAVL’ are not supported.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>default</strong>: *LIBL</div>
+</div>
+</dd>
+<dt>object_name</dt><dd><p>Specify the name of the object for which specific authority is to be granted, revoked or displayed to one or more users.</p>
+<p>Valid for all the operations.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: True</div>
+<div class="line"><strong>type</strong>: str</div>
+</div>
+</dd>
+<dt>object_type</dt><dd><p>Specify the object type of the object for which specific authorities are to be granted, revoked or displayed to the specified users.</p>
+<p>Supported object type refer to <a class="reference external" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm">https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm</a></p>
+<p>Valid for all the operations.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: True</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>choices</strong>: *ALL, *ALRTBL, *BNDDIR, *CFGL, *CHTFMT, *CLD, *CLS, *CMD, *CNNL, *COSD, *CRG, *CRQD, *CSI, *CSPMAP, *CSPTBL, *CTLD, *DEVD, *DTAARA, *DTADCT, *DTAQ, *EDTD, *FCT, *FILE, *FNTRSC, *FNTTBL, *FORMDF, *FTR, *GSS, *IGCDCT, *IGCSRT, *IGCTBL, *IMGCLG, *IPXD, *JOBD, *JOBQ, *JOBSCD, *JRN, *JRNRCV, *LIB, *LIND, *LOCALE, *M36, *M36CFG, *MEDDFN, *MENU, *MGTCOL, *MODD, *MODULE, *MSGF, *MSGQ, *NODGRP, *NODL, *NTBD, *NWID, *NWSCFG, *NWSD, *OUTQ, *OVL, *PAGDFN, *PAGSEG, *PDFMAP, *PDG, *PGM, *PNLGRP, *PRDAVL, *PRDDFN, *PRDLOD, *PSFCFG, *QMFORM, *QMQRY, *QRYDFN, *RCT, *S36, *SBSD, *SCHIDX, *SPADCT, *SQLPKG, *SQLUDT, *SQLXSR, *SRVPGM, *SSND, *SVRSTG, *TBL, *TIMZON, *USRIDX, *USRPRF, *USRQ, *USRSPC, *VLDL, *WSCST</div>
+</div>
+</dd>
+<dt>operation</dt><dd><p>The authority operation.</p>
+<p>Valid for all the operations.</p>
+<p>Operation grant is to grant user(s) authority(s) to object(s).</p>
+<p>Operation revoke is to revoke user(s) authority(s) from object(s).</p>
+<p>Operation display is to display object(s)’s authority information.</p>
+<p>Operation grant_autl is to grant a authorization list(the authorization list object contains the list of authority) to object(s).</p>
+<p>Operation revoke_autl is to revoke authorization list from object(s).</p>
+<p>Operation grant_ref is to grant the reference object to be queried to obtain authorization information.</p>
+<p>For more information about reference object, refer to <a class="reference external" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm">https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm</a></p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: True</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>choices</strong>: grant, revoke, display, grant_autl, revoke_autl, grant_ref</div>
+</div>
+</dd>
+<dt>ref_asp_device</dt><dd><p>Specifies the auxiliary storage pool (ASP) device name where the library that contains the reference object is located.</p>
+<p>The ASP group name is the name of the primary ASP device within the ASP group.</p>
+<p>Valid only for operation grant_ref</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>default</strong>: *</div>
+</div>
+</dd>
+<dt>ref_object_library</dt><dd><p>Specify the name of the library to be searched.</p>
+<p>Valid only for operation grant_ref.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>default</strong>: *LIBL</div>
+</div>
+</dd>
+<dt>ref_object_name</dt><dd><p>Specify the name of the reference object for which specific authority is to be granted, revoked or displayed to one or more users.</p>
+<p>Valid only for operation grant_ref, you must specify a value other than ‘’.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: str</div>
+</div>
+</dd>
+<dt>ref_object_type</dt><dd><p>Specify the reference object type of the object for which specific authorities are to be granted, revoked or displayed to the specified users.</p>
+<p>Supported reference object type refer to <a class="reference external" href="https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm">https://www.ibm.com/support/knowledgecenter/ssw_ibm_i_74/cl/grtobjaut.htm</a></p>
+<p>Valid only for operation grant_ref.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>default</strong>: *OBJTYPE</div>
+<div class="line"><strong>choices</strong>: *OBJTYPE, *ALRTBL, *AUTL, *BNDDIR, *CFGL, *CHTFMT, *CLD, *CLS, *CMD, *CNNL, *COSD, *CRG, *CRQD, *CSI, *CSPMAP, *CSPTBL, *CTLD, *DEVD, *DTAARA, *DTADCT, *DTAQ, *EDTD, *FCT, *FILE, *FNTRSC, *FNTTBL, *FORMDF, *FTR, *GSS, *IGCDCT, *IGCSRT, *IGCTBL, *IMGCLG, *IPXD, *JOBD, *JOBQ, *JOBSCD, *JRN, *JRNRCV, *LIB, *LIND, *LOCALE, *M36, *M36CFG, *MEDDFN, *MENU, *MGTCOL, *MODD, *MODULE, *MSGF, *MSGQ, *NODGRP, *NODL, *NTBD, *NWID, *NWSCFG, *NWSD, *OUTQ, *OVL, *PAGDFN, *PAGSEG, *PDFMAP, *PDG, *PGM, *PNLGRP, *PRDDFN, *PRDLOD, *PSFCFG, *QMFORM, *QMQRY, *QRYDFN, *RCT, *S36, *SBSD, *SCHIDX, *SPADCT, *SQLPKG, *SQLUDT, *SQLXSR, *SRVPGM, *SSND, *SVRSTG, *TBL, *TIMZON, *USRIDX, *USRPRF, *USRQ, *USRSPC, *VLDL, *WSCST</div>
+</div>
+</dd>
+<dt>replace_authority</dt><dd><p>Specifies whether the authorities replace the user’s current authorities.</p>
+<p>Valid only for operations grant.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: bool</div>
+</div>
+</dd>
+<dt>user</dt><dd><p>Specifies one or more users to whom authority for the named object is to be granted or revoked.</p>
+<p>Valid only for operations grant and revoke.</p>
+<div class="line-block">
+<div class="line"><strong>required</strong>: false</div>
+<div class="line"><strong>type</strong>: list</div>
+<div class="line"><strong>default</strong>: [‘’]</div>
+</div>
+</dd>
 </dl>
 </div>
-</div>
 <div class="section" id="examples">
-<h2><a class="toc-backref" href="#id37">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id17">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Grant 1 user 1 authority on object</span>
   <span class="nt">ibmi_object_authority</span><span class="p">:</span>
     <span class="nt">operation</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grant</span>
@@ -386,37 +421,104 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="see-also">
+<h2><a class="toc-backref" href="#id18">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this headline">¶</a></h2>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="ibmi_object_find.html#ibmi-object-find-module"><span class="std std-ref">ibmi_object_find – Find specific IBM i object(s).</span></a></p></li>
+</ul>
+</div>
+</div>
 <div class="section" id="return-values">
-<h2><a class="toc-backref" href="#id38">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id19">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline">¶</a></h2>
 <blockquote>
-<div><dl class="docutils">
-<dt>stderr_lines (when rc as no-zero(failure), list, [‘CPF2209: Library CHANGL not found’])</dt>
-<dd>The command standard error split in lines</dd>
-<dt>object_authority_list (When rc as 0(success) and operation is display, list, [{‘OBJECT_TYPE’: ‘<a href="#id27"><span class="problematic" id="id28">*</span></a>DTAARA’, ‘DATA_READ’: ‘YES’, ‘DATA_UPDATE’: ‘YES’, ‘SYSTEM_OBJECT_SCHEMA’: ‘CHANGLE’, ‘DATA_ADD’: ‘YES’, ‘DATA_DELETE’: ‘YES’, ‘OBJECT_EXISTENCE’: ‘NO’, ‘SQL_OBJECT_TYPE’: ‘’, ‘AUTHORIZATION_LIST’: ‘’, ‘OBJECT_AUTHORITY’: ‘<a href="#id29"><span class="problematic" id="id30">*</span></a>CHANGE’, ‘AUTHORIZATION_NAME’: ‘<a href="#id31"><span class="problematic" id="id32">*</span></a>PUBLIC’, ‘TEXT_DESCRIPTION’: ‘’, ‘OBJECT_ALTER’: ‘NO’, ‘OBJECT_OPERATIONAL’: ‘YES’, ‘OBJECT_MANAGEMENT’: ‘NO’, ‘OBJECT_NAME’: ‘ANSIBLE’, ‘DATA_EXECUTE’: ‘YES’, ‘OBJECT_REFERENCE’: ‘NO’, ‘OWNER’: ‘CHANGLE’, ‘SYSTEM_OBJECT_NAME’: ‘ANSIBLE’, ‘OBJECT_SCHEMA’: ‘CHANGLE’}])</dt>
-<dd>The result set of object authority list</dd>
-<dt>stderr (when rc as no-zero(failure), str, CPF2209: Library CHANGL not found)</dt>
-<dd>The standard error</dd>
-<dt>stdout (when rc as 0(success) and the operation is not display, str, CPI2204: Authority given to 1 objects. Not given to 0 objects. Partially given to 0 objects.)</dt>
-<dd>The standard output</dd>
-<dt>stdout_lines (when rc as 0(success) and the operation is not display, list, [‘CPI2204: Authority given to 1 objects. Not given to 0 objects. Partially given to 0 objects.’, ‘CPC2201: Object authority granted.’])</dt>
-<dd>The command standard output split in lines</dd>
-<dt>rc (always, int, 255)</dt>
-<dd>The return code (0 means success, non-zero means failure)</dd>
+<div><dl>
+<dt>stdout</dt><dd><div class="line-block">
+<div class="line">The standard output</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>returned</strong>: when rc as 0(success) and the operation is not display</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>sample</strong>: CPI2204: Authority given to 1 objects. Not given to 0 objects. Partially given to 0 objects.</div>
+</div>
+</dd>
+<dt>stderr</dt><dd><div class="line-block">
+<div class="line">The standard error</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>returned</strong>: when rc as no-zero(failure)</div>
+<div class="line"><strong>type</strong>: str</div>
+<div class="line"><strong>sample</strong>: CPF2209: Library CHANGL not found</div>
+</div>
+</dd>
+<dt>rc</dt><dd><div class="line-block">
+<div class="line">The return code (0 means success, non-zero means failure)</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>returned</strong>: always</div>
+<div class="line"><strong>type</strong>: int</div>
+<div class="line"><strong>sample</strong>: 255</div>
+</div>
+</dd>
+<dt>stdout_lines</dt><dd><div class="line-block">
+<div class="line">The command standard output split in lines</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>returned</strong>: when rc as 0(success) and the operation is not display</div>
+<div class="line"><strong>type</strong>: list</div>
+<div class="line"><strong>sample</strong>:</div>
+</div>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;CPI2204: Authority given to 1 objects. Not given to 0 objects. Partially given to 0 objects.&quot;</span><span class="p">,</span> <span class="s2">&quot;CPC2201: Object authority granted.&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt>stderr_lines</dt><dd><div class="line-block">
+<div class="line">The command standard error split in lines</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>returned</strong>: when rc as no-zero(failure)</div>
+<div class="line"><strong>type</strong>: list</div>
+<div class="line"><strong>sample</strong>:</div>
+</div>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="s2">&quot;CPF2209: Library CHANGL not found&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt>object_authority_list</dt><dd><div class="line-block">
+<div class="line">The result set of object authority list</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>returned</strong>: When rc as 0(success) and operation is display</div>
+<div class="line"><strong>type</strong>: list</div>
+<div class="line"><strong>sample</strong>:</div>
+</div>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s2">&quot;AUTHORIZATION_LIST&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;AUTHORIZATION_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;*PUBLIC&quot;</span><span class="p">,</span> <span class="s2">&quot;DATA_ADD&quot;</span><span class="p">:</span> <span class="s2">&quot;YES&quot;</span><span class="p">,</span> <span class="s2">&quot;DATA_DELETE&quot;</span><span class="p">:</span> <span class="s2">&quot;YES&quot;</span><span class="p">,</span> <span class="s2">&quot;DATA_EXECUTE&quot;</span><span class="p">:</span> <span class="s2">&quot;YES&quot;</span><span class="p">,</span> <span class="s2">&quot;DATA_READ&quot;</span><span class="p">:</span> <span class="s2">&quot;YES&quot;</span><span class="p">,</span> <span class="s2">&quot;DATA_UPDATE&quot;</span><span class="p">:</span> <span class="s2">&quot;YES&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_ALTER&quot;</span><span class="p">:</span> <span class="s2">&quot;NO&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_AUTHORITY&quot;</span><span class="p">:</span> <span class="s2">&quot;*CHANGE&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_EXISTENCE&quot;</span><span class="p">:</span> <span class="s2">&quot;NO&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_MANAGEMENT&quot;</span><span class="p">:</span> <span class="s2">&quot;NO&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;ANSIBLE&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_OPERATIONAL&quot;</span><span class="p">:</span> <span class="s2">&quot;YES&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_REFERENCE&quot;</span><span class="p">:</span> <span class="s2">&quot;NO&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_SCHEMA&quot;</span><span class="p">:</span> <span class="s2">&quot;CHANGLE&quot;</span><span class="p">,</span> <span class="s2">&quot;OBJECT_TYPE&quot;</span><span class="p">:</span> <span class="s2">&quot;*DTAARA&quot;</span><span class="p">,</span> <span class="s2">&quot;OWNER&quot;</span><span class="p">:</span> <span class="s2">&quot;CHANGLE&quot;</span><span class="p">,</span> <span class="s2">&quot;SQL_OBJECT_TYPE&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;SYSTEM_OBJECT_NAME&quot;</span><span class="p">:</span> <span class="s2">&quot;ANSIBLE&quot;</span><span class="p">,</span> <span class="s2">&quot;SYSTEM_OBJECT_SCHEMA&quot;</span><span class="p">:</span> <span class="s2">&quot;CHANGLE&quot;</span><span class="p">,</span> <span class="s2">&quot;TEXT_DESCRIPTION&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
+<dt>job_log</dt><dd><div class="line-block">
+<div class="line">The IBM i job log of the task executed.</div>
+</div>
+<div class="line-block">
+<div class="line"><strong>returned</strong>: always</div>
+<div class="line"><strong>type</strong>: list</div>
+<div class="line"><strong>sample</strong>:</div>
+</div>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[{</span><span class="s2">&quot;FROM_INSTRUCTION&quot;</span><span class="p">:</span> <span class="s2">&quot;318F&quot;</span><span class="p">,</span> <span class="s2">&quot;FROM_LIBRARY&quot;</span><span class="p">:</span> <span class="s2">&quot;QSYS&quot;</span><span class="p">,</span> <span class="s2">&quot;FROM_MODULE&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;FROM_PROCEDURE&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;FROM_PROGRAM&quot;</span><span class="p">:</span> <span class="s2">&quot;QWTCHGJB&quot;</span><span class="p">,</span> <span class="s2">&quot;FROM_USER&quot;</span><span class="p">:</span> <span class="s2">&quot;CHANGLE&quot;</span><span class="p">,</span> <span class="s2">&quot;MESSAGE_FILE&quot;</span><span class="p">:</span> <span class="s2">&quot;QCPFMSG&quot;</span><span class="p">,</span> <span class="s2">&quot;MESSAGE_ID&quot;</span><span class="p">:</span> <span class="s2">&quot;CPD0912&quot;</span><span class="p">,</span> <span class="s2">&quot;MESSAGE_LIBRARY&quot;</span><span class="p">:</span> <span class="s2">&quot;QSYS&quot;</span><span class="p">,</span> <span class="s2">&quot;MESSAGE_SECOND_LEVEL_TEXT&quot;</span><span class="p">:</span> <span class="s2">&quot;Cause . . . . . :   This message is used by application programs as a general escape message.&quot;</span><span class="p">,</span> <span class="s2">&quot;MESSAGE_SUBTYPE&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;MESSAGE_TEXT&quot;</span><span class="p">:</span> <span class="s2">&quot;Printer device PRT01 not found.&quot;</span><span class="p">,</span> <span class="s2">&quot;MESSAGE_TIMESTAMP&quot;</span><span class="p">:</span> <span class="s2">&quot;2020-05-20-21.41.40.845897&quot;</span><span class="p">,</span> <span class="s2">&quot;MESSAGE_TYPE&quot;</span><span class="p">:</span> <span class="s2">&quot;DIAGNOSTIC&quot;</span><span class="p">,</span> <span class="s2">&quot;ORDINAL_POSITION&quot;</span><span class="p">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;SEVERITY&quot;</span><span class="p">:</span> <span class="s2">&quot;20&quot;</span><span class="p">,</span> <span class="s2">&quot;TO_INSTRUCTION&quot;</span><span class="p">:</span> <span class="s2">&quot;9369&quot;</span><span class="p">,</span> <span class="s2">&quot;TO_LIBRARY&quot;</span><span class="p">:</span> <span class="s2">&quot;QSYS&quot;</span><span class="p">,</span> <span class="s2">&quot;TO_MODULE&quot;</span><span class="p">:</span> <span class="s2">&quot;QSQSRVR&quot;</span><span class="p">,</span> <span class="s2">&quot;TO_PROCEDURE&quot;</span><span class="p">:</span> <span class="s2">&quot;QSQSRVR&quot;</span><span class="p">,</span> <span class="s2">&quot;TO_PROGRAM&quot;</span><span class="p">:</span> <span class="s2">&quot;QSQSRVR&quot;</span><span class="p">}]</span>
+</pre></div>
+</div>
+</div></blockquote>
+</dd>
 </dl>
 </div></blockquote>
-</div>
-<div class="section" id="status">
-<h2><a class="toc-backref" href="#id39">Status</a><a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li>This  is not guaranteed to have a backwards compatible interface. <em>[preview]</em></li>
-<li>This  is maintained by community.</li>
-</ul>
-<div class="section" id="authors">
-<h3>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li>Chang Le(&#64;changlexc)</li>
-</ul>
-</div>
 </div>
 </div>
 
@@ -431,7 +533,7 @@
         <a href="ibmi_object_find.html" class="btn btn-neutral float-right" title="ibmi_object_find – Find specific IBM i object(s)." accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="ibmi_message.html" class="btn btn-neutral float-left" title="ibmi_message – Search or reply message on a remote IBMi node" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="ibmi_message.html" class="btn btn-neutral float-left" title="ibmi_message – Search message" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -440,11 +542,11 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Simon Stone
+        
+        &copy; Copyright 2020, IBM
 
     </p>
-  </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  </div> 
 
 </footer>
 
@@ -455,7 +557,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
